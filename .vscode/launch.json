@@ -10,6 +10,7 @@
             "name": "Open index.html",
             "url": "http://localhost:3000",
             "webRoot": "${workspaceFolder}",
+            "preLaunchTask": "Transpile typescript"
         }
     ]
 }
