@@ -11,39 +11,77 @@ function createFavicon(){
     canvas.height = 32;
     const ctx = canvas.getContext('2d');
 
-    //function 
+    interface Frame{
+        imageUrl: string,
+        duration: number
+    }
 
-    function drawFrame(deltaTime: number){
+    const animation: Array<Frame> = [
+        {imageUrl:'assets/smiley1.png', duration: 100},
+        {imageUrl:'assets/smiley2.png', duration: 100},
+        {imageUrl:'assets/smiley3.png', duration: 100},
+        {imageUrl:'assets/smiley4.png', duration: 100},
+        {imageUrl:'assets/smiley5.png', duration: 100},
+        {imageUrl:'assets/smiley6.png', duration: 100},
+        {imageUrl:'assets/smiley7.png', duration: 100},
+        {imageUrl:'assets/smiley8.png', duration: 100},
+        {imageUrl:'assets/smiley9.png', duration: 100},
+        {imageUrl:'assets/smiley10.png', duration: 100},
+        {imageUrl:'assets/smiley11.png', duration: 100},
+        {imageUrl:'assets/smiley12.png', duration: 100},
+    ];
+
+    let currentAnimFrame = 0;
+    let currentFrameDuration = 0;
+    let timeAtLastFrame = 0;
+    let firstFrameDrawn = false;
+
+    function drawAnimation(time: number){
         if (!icon || !ctx){
             return;
         }
 
-        ctx.clearRect(0, 0, 32, 32);
+        const deltaTime = time - timeAtLastFrame;
+        timeAtLastFrame = time;
 
-        ctx.fillStyle = '#000000';
-        const size = 14;
-        ctx.beginPath();
-        ctx.arc(16, 16, size, 0, 2 * Math.PI);
-        ctx.fill();
+        if (!firstFrameDrawn){
+            const image = document.createElement('img');
+            image.src = animation[0].imageUrl;
+            image.width = 32;
+            image.height = 32;
 
-        ctx.strokeStyle = '#fff000';
-        ctx.lineWidth = 4;
-        const length = 20;
-        const speed = 0.005;
-        const angle = (-speed * deltaTime) % ((2 * Math.PI));
-        ctx.beginPath();
-        ctx.moveTo(16, 16);
-        const x = 16 + (Math.sin(angle) * length);
-        const y = 16 + (Math.cos(angle) * length);
-        ctx.lineTo(x, y);
-        ctx.stroke();
+            ctx.clearRect(0, 0, 32, 32);
+            ctx.drawImage(image, 0, 0);
 
-        icon.href = canvas.toDataURL('image/png');
+            icon.href = canvas.toDataURL('image/png');
 
-        requestAnimationFrame(drawFrame);
+            firstFrameDrawn = true;
+        }
+
+        currentFrameDuration += deltaTime;
+
+        if (currentFrameDuration > animation[currentAnimFrame].duration){
+            currentFrameDuration = 0;
+            currentAnimFrame += 1;
+            if (currentAnimFrame >= animation.length){
+                currentAnimFrame = 0;
+            }
+
+            const image = document.createElement('img');
+            image.src = animation[currentAnimFrame].imageUrl;
+            image.width = 32;
+            image.height = 32;
+
+            ctx.clearRect(0, 0, 32, 32);
+            ctx.drawImage(image, 0, 0);
+
+            icon.href = canvas.toDataURL('image/png');
+        }
+
+        requestAnimationFrame(drawAnimation);
     }
 
-    requestAnimationFrame(drawFrame);
+    requestAnimationFrame(drawAnimation);
 }
 
 export {createFavicon};
