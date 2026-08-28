@@ -1,0 +1,13 @@
+{
+  // Visit https://aka.ms/tsconfig to read more about this file
+  "compilerOptions": {
+    "module":"esnext",
+    "removeComments": true,
+    "sourceMap": false,
+    "rootDir": "src",
+    "outDir": "src/dist"
+  },
+
+  "include": ["src/**/*"],
+  "exclude": ["src/dist"]
+}
