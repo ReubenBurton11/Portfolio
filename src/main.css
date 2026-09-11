@@ -5,4 +5,11 @@
 body {
     margin: 0;
 }
+
+div.icon {
+    display: inline;
+}
+
+div.icon svg {
+    width: 10vw;
 }
