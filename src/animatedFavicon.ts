@@ -51,14 +51,14 @@ function createFavicon(){
 
     const animation: Animation = {
         animFrames: [
-            {imageUrl:'assets/Cat_Grey_White1.png', startTime: 0},
-            {imageUrl:'assets/Cat_Grey_White2.png', startTime: 100},
-            {imageUrl:'assets/Cat_Grey_White3.png', startTime: 200},
-            {imageUrl:'assets/Cat_Grey_White4.png', startTime: 300},
-            {imageUrl:'assets/Cat_Grey_White5.png', startTime: 400},
-            {imageUrl:'assets/Cat_Grey_White6.png', startTime: 500},
-            {imageUrl:'assets/Cat_Grey_White7.png', startTime: 600},
-            {imageUrl:'assets/Cat_Grey_White8.png', startTime: 700, endTime: 800},
+            {imageUrl:'../assets/Cat_Grey_White1.png', startTime: 0},
+            {imageUrl:'../assets/Cat_Grey_White2.png', startTime: 100},
+            {imageUrl:'../assets/Cat_Grey_White3.png', startTime: 200},
+            {imageUrl:'../assets/Cat_Grey_White4.png', startTime: 300},
+            {imageUrl:'../assets/Cat_Grey_White5.png', startTime: 400},
+            {imageUrl:'../assets/Cat_Grey_White6.png', startTime: 500},
+            {imageUrl:'../assets/Cat_Grey_White7.png', startTime: 600},
+            {imageUrl:'../assets/Cat_Grey_White8.png', startTime: 700, endTime: 800},
         ],
         duration: () => {
             let value: number = 0;
@@ -79,14 +79,10 @@ function createFavicon(){
     let timeAtLastFrame = 0;
     let animProgress = 0;
 
-    let CanvasExists = false;
-
     function drawAnimation(time: number){
         if (!icon){
             return;
         }
-
-        if (!CanvasExists) document.body.appendChild(canvas);
 
         const deltaTime = time - timeAtLastFrame;
         timeAtLastFrame = time;
