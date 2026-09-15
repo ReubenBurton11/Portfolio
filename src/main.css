@@ -23,3 +23,14 @@ div.tool-icon svg {
     width: 32px;
     height: auto;
 }
+
+footer :not(section, h2, h3, a, hr, section#contact p){
+    background-image: url("../assets/smiley10.png");
+    background-color: salmon;
+    margin: 0;
+    padding: 16px;
+}
+
+footer hr {
+    margin-bottom: 0;
+}
