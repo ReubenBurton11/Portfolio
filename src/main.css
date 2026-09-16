@@ -6,6 +6,15 @@ body {
     margin: 0;
 }
 
+.disabled {
+    pointer-events: none;
+    color: grey;
+}
+
+img {
+    font-style: italic;
+}
+
 div.icon {
     display: inline;
 }

@@ -18,5 +18,28 @@
         <header>
             <h1>Lego Sorting Assistant</h1>
         </header>
+
+        <main id="main-content">
+            <section>
+                <img alt="Showcase Image">
+                <p>This is a tool I made to help streamline the process of organising my childhood
+                    lego back into their original sets so I could sell them. It's used to keep track
+                    of all the parts and minifigures in a set whilst I'm rooting through a big box of 
+                    jumbled up pieces so I know what parts I'm looking for and can keep track of what
+                    parts I've already found. 
+                </p>
+                <p><a class="disabled" href="https://github.com/ReubenBurton11/Lego-Sorter" target="_blank">View on Github (In Progress)</a>
+                </p>
+                <p>I used <a href="https://rebrickable.com/api/" target="_blank">Rebrickable's Lego Catalog API</a> 
+                    to search for sets, get part and minifigure data for generating the checklist, and get
+                    general data about the set like the year it was made and how many parts it contains.
+                </p>
+                <p>I created a saving and loading system which converts the checklist data to json, including 
+                    images to avoid unnecessary API calls, and converts the json back to a checklist. The 
+                    checklist saves every time an element gets changed and occurs before the UI updates to
+                    ensure the displayed and saved data stay consistent.
+                </p>
+            </section>
+        </main>
     </body>
 </html>
