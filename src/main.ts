@@ -11,17 +11,32 @@ const iconTimerIdPrefix: string = 'icon-timer'
 for (let i = 0; i < icons.length; i++){
     icons[i].addEventListener('mouseenter', (event) => {
         const target: HTMLElement = event.target as HTMLElement;
-        RotateAnim(target, true, 1440, 360, iconTimerIdPrefix + i);
+        LinearRotateAnim(target, true, 1440, 360, iconTimerIdPrefix + i);
     });
     
     icons[i].addEventListener('mouseleave', (event) => {
         const target:HTMLElement = event.target as HTMLElement;
-        RotateAnim(target, false, 1440, 0, iconTimerIdPrefix + i);
+        LinearRotateAnim(target, false, 1440, 0, iconTimerIdPrefix + i);
     });
 }
 
+
+//TODO: Put LinearRotateAnim in an external module
 let rotateTimerIds: Map<string, number> = new Map;
-function RotateAnim(element: HTMLElement, isClockwise: boolean = true, degPerSec: number = 360, 
+/**
+ * Rotates a html element linearly over time
+ * 
+ * @param element - The html element to rotate
+ * @param isClockwise - Whether to rotate clockwise (true) or anticlockwise (false)
+ * @param degPerSec - Degrees Per Second, the speed at which the element should rotate
+ * @param limit - The angle at which the animation stops
+ * @param timerId - The unique ID for the rotate animation, if it matches a playing 
+ *                  rotate animation this one takes priority
+ * @param stepInterval - The time interval between animation steps
+ * @param timeout - The time the animation runs for before automatically stopping. 
+ *                  Ensures timers are destroyed to protect performance
+ */
+function LinearRotateAnim(element: HTMLElement, isClockwise: boolean = true, degPerSec: number = 360, 
     limit: number = 360, timerId: string = '', stepInterval: number = 10, timeout: number = 10000){
     const elementRot: string = element.style.rotate;
     let rot: number = elementRot.length > 0 ? elementRot.slice(0, elementRot.search('deg')) as unknown as number : 0;
