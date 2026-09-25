@@ -18,5 +18,31 @@
         <header>
             <h1>Solar System Portfolio</h1>
         </header>
+
+        <main id="main-content">
+            <section>
+                <img alt="Showcase Image">
+                <p>A website I made as an interactive way to view my portfolio. Combining my interests in 
+                    web development and game development, it consists of a spaceship that the user flies around 
+                    a mini solar system in which each planet contains details of a different project.
+                </p>
+                <p><a href="https://portfolio-solar-system.page.gd" target="_blank">View in new tab</a> 
+                </p>
+                <p>I used threejs to render the 3d scene in a fullscreen canvas that re-renders the scene if the 
+                    canvas is resized so the scene is always the size of the window. I also used vue components 
+                    as UI that are created on top of the canvas at run-time, creating an illusion of being in the 
+                    scene.  
+                </p>
+                <p>I created a system for easily adding new objects to the scene that lets me assign a few variables 
+                    like position, size, name, and description to populate the scene quickly. Each planet has a slot 
+                    variable which takes a html file and shows the content of that for the planet's UI which allows 
+                    a lot of variation when designing project pages.
+                </p>
+                <p>I created a controls system that allows me to specify which keys I want to listen for events from 
+                    and bind functions to those rather than having a long if statement checking which key has been 
+                    pressed which makes adding new functionality and maintaining code much easier to navigate. 
+                </p>
+            </section>
+        </main>
     </body>
 </html>
