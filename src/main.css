@@ -1,9 +1,12 @@
 :root{
-    
+    --primary-bg-color: #eeeeee;
+    --primary-fg-color: #222222;
+    --secondary-bg-color: #222222;
+    --secondary-fg-color: #eeeeee;
 }
 
-body {
-    margin: 0;
+.important {
+    font-weight: bold;
 }
 
 .disabled {
@@ -11,12 +14,57 @@ body {
     color: grey;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary-bg-color);
+    color: var(--primary-fg-color);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 img {
     font-style: italic;
 }
 
-div.icon {
-    display: inline;
+/* #region Top Nav Bar */
+nav.topnav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav.topnav > ul {
+    display: flex;
+    justify-content: left;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--secondary-bg-color);
+}
+
+nav.topnav li a.first {
+    padding: 16px 16px;
+}
+
+nav.topnav li a {
+    display: block;
+    text-align: center;
+    padding: 16px 8px;
+    color: var(--secondary-fg-color);
+    text-decoration: none;
+}
+
+nav.topnav li a:hover {
+    background-color: var(--primary-bg-color);
+    color: var(--primary-fg-color);
+}
+
+nav.topnav li a.active {
+    background-color: white;
+    color: black;
+}
+/* #endregion */
 }
 
 div.icon svg {
@@ -28,7 +76,7 @@ div.tool-icon {
     display: inline;
 }
 
-div.tool-icon svg {
+div.tool-icon > svg {
     width: 32px;
     height: auto;
 }
