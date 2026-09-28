@@ -7,8 +7,70 @@ const iconList = document.querySelector('.icon-list');
 iconList?.addEventListener('wheel', (event) => {
     let e: WheelEvent = event as WheelEvent;
     e.preventDefault();
-    iconList.scrollLeft += e.deltaY;
+    LinearScrollAnim(e.deltaY);
 });
+
+let scrollTimerId: number | undefined;
+let totalScroll: number = 0;
+function LinearScrollAnim(scroll: number){
+    if (!iconList) return;
+    clearInterval(scrollTimerId);
+    const start = iconList.scrollLeft;
+    const stepInterval: number = 10;
+    const scrollSpeed: number = 0.1;
+    const scrollLength: number = 50;
+    const timeout: number = 5000;
+    
+    if (scroll * totalScroll < 0){
+        totalScroll = 0;
+    }
+
+    totalScroll += scroll;
+
+    let timerId: number | undefined;
+
+    let duration: number = 0;
+
+    Scroll();
+
+    function Stop(){
+        clearInterval(timerId);
+        totalScroll = 0;
+    }
+
+    function Scroll(){
+        if (!iconList) return;
+
+        duration += stepInterval;
+        if (duration > timeout){
+            Stop();
+            return;
+        }
+
+        const direction = (totalScroll / Math.abs(totalScroll));
+        const velocity = totalScroll * scrollSpeed;
+
+        if (direction * (iconList.scrollLeft + velocity) >= direction * ((direction * scrollLength * Math.log(1 + Math.abs(totalScroll))) + start)){
+            iconList.scrollLeft = (direction * scrollLength * Math.log(1 + Math.abs(totalScroll))) + start;
+            Stop();
+            return;
+        }
+        else if (iconList.scrollLeft + velocity <= 0){
+            Stop();
+            return;
+        }
+        else if (iconList.scrollLeft + velocity >= iconList.scrollWidth){
+            Stop();
+            return;
+        }
+
+        iconList.scrollLeft += velocity;
+
+        clearInterval(timerId);
+        timerId = setInterval(Scroll, stepInterval);
+        scrollTimerId = timerId;
+    }
+}
 //...
 
 //Rotates icons when hovered over
