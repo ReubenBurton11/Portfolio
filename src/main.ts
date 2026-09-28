@@ -2,6 +2,14 @@ import {createFavicon} from "./animatedFavicon.js";
 
 createFavicon();
 
+//Makes icon list horizontally scrollable
+const iconList = document.querySelector('.icon-list');
+iconList?.addEventListener('wheel', (event) => {
+    let e: WheelEvent = event as WheelEvent;
+    e.preventDefault();
+    iconList.scrollLeft += e.deltaY;
+});
+//...
 
 //Rotates icons when hovered over
 const icons: NodeListOf<HTMLElement> = document.querySelectorAll('.icon svg');
