@@ -10,6 +10,7 @@ iconList?.addEventListener('wheel', (event) => {
     LinearScrollAnim(e.deltaY);
 });
 
+//TODO: Add comments to linear scroll and make it work for more than just icon list
 let scrollTimerId: number | undefined;
 let totalScroll: number = 0;
 function LinearScrollAnim(scroll: number){
