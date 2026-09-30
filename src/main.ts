@@ -1,7 +1,3 @@
-import {createFavicon} from "./animatedFavicon.js";
-
-createFavicon();
-
 //Makes icon list horizontally scrollable
 const iconList = document.querySelector('.icon-list');
 iconList?.addEventListener('wheel', (event) => {

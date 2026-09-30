@@ -1,3 +1,5 @@
+//TODO: Make this a useable library for starting and stopping favicon anims
+
 function createFavicon(){
     let icon: HTMLLinkElement | null = document.querySelector('link[rel~="icon"]') as HTMLLinkElement;
     if (!icon){

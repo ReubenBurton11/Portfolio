@@ -1,9 +1,14 @@
 :root{
+    font-size: 16px;
+
     --primary-bg-color: #eeeeee;
     --primary-fg-color: #222222;
     --secondary-bg-color: #222222;
     --secondary-fg-color: #eeeeee;
     --error-color: #e3e3e3;
+    --link-color: #ac5ab5;
+
+    --line-thickness: 2px;
 }
 
 .important {
@@ -23,8 +28,64 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+p, h1, h2, h3, h4, h5, h6{
+    margin: 10px;
+}
+
+h1 {
+    font-size: 1.6em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.4em;
+}
+
+h4 {
+    font-size: 1.3em;
+}
+
+h5 {
+    font-size: 1.2em;
+}
+
+h6 {
+    font-size: 1.1em;
+}
+
+p {
+    font-size: 1em;
+}
+
+header {
+    font-size: 2em;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-thickness: .1em;
+}
+
 img {
     font-style: italic;
+    font-size: 0.9em;
+}
+
+hr {
+    height: var(--line-thickness);
+    width: 100%;
+    background-color: var(--primary-fg-color);
+    border-style: none;
+    margin: 0;
 }
 
 /* #region Top Nav Bar */
@@ -32,6 +93,11 @@ nav.topnav {
     position: sticky;
     top: 0;
     z-index: 10;
+
+    p {
+        margin: 0;
+        padding: 0;
+    }
 }
 
 nav.topnav > ul {
@@ -57,13 +123,9 @@ nav.topnav li a {
 }
 
 nav.topnav li a:hover {
-    background-color: var(--primary-bg-color);
+    background-image: url(../assets/dither.png);
+    background-size: 160px;
     color: var(--primary-fg-color);
-}
-
-nav.topnav li a.active {
-    background-color: white;
-    color: black;
 }
 /* #endregion Top Nav Bar */
 
@@ -102,6 +164,10 @@ div.icon > svg {
     display: block;
     padding: 0;
     margin: 0;
+
+    header {
+        font-size: 1em;
+    }
 }
 
 .project .container {
@@ -113,7 +179,7 @@ div.icon > svg {
     margin: 20px;
     padding: 0;
     border-radius: 20px;
-    border: 2px solid var(--primary-fg-color);
+    border: var(--line-thickness) solid var(--primary-fg-color);
     background-color: var(--primary-bg-color);
     color: var(--primary-fg-color);
     max-height: 280px;
@@ -174,13 +240,7 @@ div.icon > svg {
 }
 /* #endregion Projects */
 
-footer :not(section, h2, h3, a, hr, section#contact p){
-    background-image: url("../assets/smiley10.png");
-    background-color: salmon;
-    margin: 0;
-    padding: 16px;
-}
-
-footer hr {
-    margin-bottom: 0;
+footer #bottom {
+    height: 50px;
+    align-content: center;
 }
