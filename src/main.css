@@ -26,6 +26,21 @@ body {
     background-color: var(--primary-bg-color);
     color: var(--primary-fg-color);
     font-family: Arial, Helvetica, sans-serif;
+    display: grid;
+    grid-template-areas: 'nav'
+                         'header'
+                         'main'
+                         'footer';
+    grid-template-columns: 100vw;
+    grid-template-rows: auto auto 1fr auto;
+    min-height: 100vh;
+}
+
+body:has(#title-header){
+    grid-template-areas: 'header'
+                         'nav'
+                         'main'
+                         'footer';
 }
 
 p, h1, h2, h3, h4, h5, h6{
@@ -60,10 +75,6 @@ p {
     font-size: 1em;
 }
 
-header {
-    font-size: 2em;
-}
-
 a {
     color: var(--link-color);
     text-decoration: none;
@@ -73,6 +84,10 @@ a:hover {
     text-decoration: underline;
     text-decoration-style: wavy;
     text-decoration-thickness: .1em;
+}
+
+small {
+    font-size: 0.8em;
 }
 
 img {
@@ -88,8 +103,14 @@ hr {
     margin: 0;
 }
 
+header {
+    grid-area: header;
+    font-size: 2em;
+}
+
 /* #region Top Nav Bar */
 nav.topnav {
+    grid-area: nav;
     position: sticky;
     top: 0;
     z-index: 10;
@@ -128,6 +149,10 @@ nav.topnav li a:hover {
     color: var(--primary-fg-color);
 }
 /* #endregion Top Nav Bar */
+
+main {
+    grid-area: main;
+}
 
 /* #region Toolbox */
 .icon-list {
@@ -240,7 +265,9 @@ div.icon > svg {
 }
 /* #endregion Projects */
 
-footer #bottom {
-    height: 50px;
-    align-content: center;
+footer {
+    grid-area: footer;
+    height: fit-content;
+    background-color: var(--secondary-bg-color);
+    color: var(--secondary-fg-color);
 }
