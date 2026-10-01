@@ -2,8 +2,10 @@
 const iconList = document.querySelector('.icon-list');
 iconList?.addEventListener('wheel', (event) => {
     let e: WheelEvent = event as WheelEvent;
-    e.preventDefault();
-    LinearScrollAnim(e.deltaY);
+    if (!(iconList.scrollLeft <= 0 && e.deltaY < 0) && !(iconList.scrollLeft >= iconList.scrollWidth - iconList.clientWidth && e.deltaY > 0)){
+        e.preventDefault();
+        LinearScrollAnim(e.deltaY);
+    }
 });
 
 //TODO: Add comments to linear scroll and make it work for more than just icon list
@@ -54,10 +56,12 @@ function LinearScrollAnim(scroll: number){
         }
         else if (iconList.scrollLeft + velocity <= 0){
             Stop();
+            iconList.scrollLeft = 0;
             return;
         }
         else if (iconList.scrollLeft + velocity >= iconList.scrollWidth){
             Stop();
+            iconList.scrollLeft = iconList.scrollWidth;
             return;
         }
 
