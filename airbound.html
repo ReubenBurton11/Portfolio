@@ -17,50 +17,57 @@
     <body>
         <nav class="topnav">
             <ul>
-                <li><a href="../#top">Reuben Burton</a></li>
-                <li><a href="../#about">About</a></li>
-                <li><a href="../#projects">Projects</a></li>
-                <li><a href="../#contact">Contact</a></li>
+                <li><a class="first" href="../#top"><p>Reuben Burton</p></a></li>
+                <li><a href="../#about"><p>About</p></a></li>
+                <li><a href="../#projects"><p>Projects</p></a></li>
+                <li><a href="../#contact"><p>Contact</p></a></li>
             </ul>
         </nav>
 
         <main id="main-content">
-            <article>
+            <article class="project-desc">
                 <header>
-                    <h2>Airbound</h2>
+                    <h1>Airbound</h2>
                 </header>
-                <img src="../assets/projects/airbound.png" alt="Showcase Image" width="315px" height="250px">
-                <p>Airbound is a third-person multiplayer PvP brawler focused on players' mastery of grappling
-                    mechanics to traverse a sprawling mega-structure whilst engaging in fast-paced aerial melee
-                    combat. Players go head to head, racing around pillars and through tunnels to reach a series
-                    of marked zones in which they fight to control with the goal of earning the most points by the 
-                    end of the match. Points are earned by reaching zones first, holding control of zones for 
-                    sufficient time, and killing other players.
-                </p>
-                <p><a href="https://kuratio.itch.io/airbound" target="_blank">View on itch.io</a></p>
-                <img src="../assets/projects/niagara-grapple-effect.gif" alt="Niagara grapple effect image">
-                <p>I created a grappling mechanic that simulates rope physics by creating a temporary point wherever 
-                    the rope makes contact with a solid object and pulling the player towards the closest point to the 
-                    player's end of the rope. I created a niagara particle effect for the grapple's visuals.
-                </p>
-                <p>I created base classes inherited from Unreal Engine's gameplay framework classes alongside useful
-                    interfaces that make creating new types of core gameplay elements, like game modes, player states, 
-                    and characters, much simpler. Which I used to make a series of game modes that we iteratively 
-                    improved on which use data assets and engine visualisations to make editing core values more 
-                    intuitive and designer friendly.
-                </p>
-                <p>I worked alongside our concept artist to implement UI, carefully handling scaling for 2 to 4 players 
-                    splitscreen using both C++ and blueprints. I also adapted the UI to be fully functional with 
-                    controllers.
-                </p>
-                <p>I used <a href="https://onlineservices.epicgames.com/" target="_blank">Epic Online Services</a> to 
-                    manage creating, ending, joining, and leaving online sessions which I hosted on a dedicated server.
-                    I also reworked the core gameplay functionality so it replicates relevant data and uses remote procedure 
-                    calls where necessary to play smoothly and accurately online.
-                </p>
-                <p>This project was demoed at the <a href="https://www.falmouth.ac.uk/games-expo" target="_blank">Falmouth
-                    University Games Expo</a> 2026.
-                </p>
+                <img class="showcase-img" src="../assets/projects/airbound.png" alt="Showcase Image" width="315px" height="250px">
+                <div class="images">
+                    <img src="../assets/projects/niagara-grapple-effect.gif" alt="Niagara grapple effect image">
+                </div>
+                <div class="summary">
+                    <p>Airbound is a third-person multiplayer PvP brawler focused on players' mastery of grappling
+                        mechanics to traverse a sprawling mega-structure whilst engaging in fast-paced aerial melee
+                        combat. Players go head to head, racing around pillars and through tunnels to reach a series
+                        of marked zones in which they fight to control with the goal of earning the most points by the 
+                        end of the match. Points are earned by reaching zones first, holding control of zones for 
+                        sufficient time, and killing other players.
+                    </p>
+                    <p><a href="https://kuratio.itch.io/airbound" target="_blank">View on itch.io</a>
+                    </p>
+                </div>
+                <div class="text">
+                    <p>I created a grappling mechanic that simulates rope physics by creating a temporary point wherever 
+                        the rope makes contact with a solid object and pulling the player towards the closest point to the 
+                        player's end of the rope. I created a niagara particle effect for the grapple's visuals.
+                    </p>
+                    <p>I created base classes inherited from Unreal Engine's gameplay framework classes alongside useful
+                        interfaces that make creating new types of core gameplay elements, like game modes, player states, 
+                        and characters, much simpler. Which I used to make a series of game modes that we iteratively 
+                        improved on which use data assets and engine visualisations to make editing core values more 
+                        intuitive and designer friendly.
+                    </p>
+                    <p>I worked alongside our concept artist to implement UI, carefully handling scaling for 2 to 4 players 
+                        splitscreen using both C++ and blueprints. I also adapted the UI to be fully functional with 
+                        controllers.
+                    </p>
+                    <p>I used <a href="https://onlineservices.epicgames.com/" target="_blank">Epic Online Services</a> to 
+                        manage creating, ending, joining, and leaving online sessions which I hosted on a dedicated server.
+                        I also reworked the core gameplay functionality so it replicates relevant data and uses remote procedure 
+                        calls where necessary to play smoothly and accurately online.
+                    </p>
+                    <p>This project was demoed at the <a href="https://www.falmouth.ac.uk/games-expo" target="_blank">Falmouth
+                        University Games Expo</a> 2026.
+                    </p>
+                </div>
             </article>
         </main>
 

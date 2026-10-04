@@ -17,37 +17,41 @@
     <body>
         <nav class="topnav">
             <ul>
-                <li><a href="../#top">Reuben Burton</a></li>
-                <li><a href="../#about">About</a></li>
-                <li><a href="../#projects">Projects</a></li>
-                <li><a href="../#contact">Contact</a></li>
+                <li><a class="first" href="../#top"><p>Reuben Burton</p></a></li>
+                <li><a href="../#about"><p>About</p></a></li>
+                <li><a href="../#projects"><p>Projects</p></a></li>
+                <li><a href="../#contact"><p>Contact</p></a></li>
             </ul>
         </nav>
-        
-        <header>
-            <h1>Music Visualiser</h1>
-        </header>
 
         <main id="main-content">
-            <section>
-                <img src="../assets/projects/music-visualiser.png" alt="Showcase Image" width="315px" height="250px">
-                <p>A website intended for use as a dynamic desktop wallpaper, featuring a well-equipped music player 
-                    as well as a background graphic visualisation which reacts to the current music. The music player 
-                    includes a play/pause toggle, skipping, looping, scrubbing, queuing, and volume control functions.
-                </p>
-                <p><a href="https://music-visualiser.page.gd" target="_blank">View in new tab</a>
-                </p>
-                <p>I created a file upload system using a mix of javascript and vue components that allows the user to 
-                    either click to upload or drag and drop an mp3 file that gets added to the back of a queue of files 
-                    waiting to be played. It allows for the removal of files from any point in the queue with the following 
-                    files moving up the queue to compensate.
-                </p>
-                <p>I used academic research to inform the visualisation so it would elicit a more connected experience to 
-                    the music. The visualisation's features are intuitive consisting of a waveform that is curved clockwise 
-                    around a circle, it's amplitude represents the music's volume and it's colour relates to volume and 
-                    pitch, with the saturation changing with volume and the hue changing with pitch. 
-                </p>
-            </section>
+            <article class="project-desc">
+                <header>
+                    <h1>Music Visualiser</h1>
+                </header>
+                <img class="showcase-img" src="../assets/projects/music-visualiser.png" alt="Showcase Image" width="315px" height="250px">
+                <div class="images"></div>
+                <div class="summary">
+                    <p>A website intended for use as a dynamic desktop wallpaper, featuring a well-equipped music player 
+                        as well as a background graphic visualisation which reacts to the current music. The music player 
+                        includes a play/pause toggle, skipping, looping, scrubbing, queuing, and volume control functions.
+                    </p>
+                    <p><a href="https://music-visualiser.page.gd" target="_blank">View in new tab</a>
+                    </p>
+                </div>
+                <div class="text">
+                    <p>I created a file upload system using a mix of javascript and vue components that allows the user to 
+                        either click to upload or drag and drop an mp3 file that gets added to the back of a queue of files 
+                        waiting to be played. It allows for the removal of files from any point in the queue with the following 
+                        files moving up the queue to compensate.
+                    </p>
+                    <p>I used academic research to inform the visualisation so it would elicit a more connected experience to 
+                        the music. The visualisation's features are intuitive consisting of a waveform that is curved clockwise 
+                        around a circle, it's amplitude represents the music's volume and it's colour relates to volume and 
+                        pitch, with the saturation changing with volume and the hue changing with pitch. 
+                    </p>
+                </div> 
+            </article>
         </main>
 
         <footer>

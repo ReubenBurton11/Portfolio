@@ -17,42 +17,46 @@
     <body>
         <nav class="topnav">
             <ul>
-                <li><a href="../#top">Reuben Burton</a></li>
-                <li><a href="../#about">About</a></li>
-                <li><a href="../#projects">Projects</a></li>
-                <li><a href="../#contact">Contact</a></li>
+                <li><a class="first" href="../#top"><p>Reuben Burton</p></a></li>
+                <li><a href="../#about"><p>About</p></a></li>
+                <li><a href="../#projects"><p>Projects</p></a></li>
+                <li><a href="../#contact"><p>Contact</p></a></li>
             </ul>
         </nav>
 
-        <header>
-            <h1>SOS: Save Our Stereos</h1>
-        </header>
-
         <main id="main-content">
-            <section>
-                <img src="../assets/projects/save-our-stereos.png" alt="Showcase Image" width="315px" height="250px">
-                <p>SOS: Save Our Stereos is a 2d rhythm game centered around its unique controller interactions 
-                    which involve pointing a torch towards an array of 5 light sensors to hit the notes coming 
-                    towards the player in time with the music. The player earns points for each note hit and 
-                    gradually gains a point multiplier for hitting notes consecutively.
-                </p>
-                <p><a href="https://www.Github.com/ReubenBurton11/SOS-Save-Our-Stereos-expo" target="_blank">View on Github</a>
-                </p>
-                <p>I connected 5 light dependent resistors to an arduino microcontroller which consistently measures 
-                    their values and checks whether they're above a threshold value upon which the arduino sends an 
-                    input to the respective target in the game. I housed the light dependent resistors in individual 
-                    hoods that keep them shaded so that they only reach the threshold value when exposed to direct 
-                    light rather than in passive room light.
-                </p>
-                <p>I 3d printed a housing for the system that mounts around a computer monitor. It has 5 antenna-like 
-                    targets containing the light dependent resistors far enough away from each other to avoid accidental
-                    inputs which attach by wire to a small box containing the microcontroller. It is also extensible so 
-                    that it fits a range of laptop and monitor screen sizes.
-                </p>
-                <p>This project was demoed at the <a href="https://www.falmouth.ac.uk/games-expo" target="_blank">
-                    Falmouth University Game Expo</a> 2024.
-                </p>
-            </section>
+            <article class="project-desc">
+                <header>
+                    <h1>SOS: Save Our Stereos</h1>
+                </header>
+                <img class="showcase-img" src="../assets/projects/save-our-stereos.png" alt="Showcase Image" width="315px" height="250px">
+                <div class="images"></div>
+                <div class="summary">
+                    <p>SOS: Save Our Stereos is a 2d rhythm game centered around its unique controller interactions 
+                        which involve pointing a torch towards an array of 5 light sensors to hit the notes coming 
+                        towards the player in time with the music. The player earns points for each note hit and 
+                        gradually gains a point multiplier for hitting notes consecutively.
+                    </p>
+                    <p><a href="https://www.Github.com/ReubenBurton11/SOS-Save-Our-Stereos-expo" target="_blank">View on Github</a>
+                    </p>
+                </div>
+                <div class="text">
+                    <p>I connected 5 light dependent resistors to an arduino microcontroller which consistently measures 
+                        their values and checks whether they're above a threshold value upon which the arduino sends an 
+                        input to the respective target in the game. I housed the light dependent resistors in individual 
+                        hoods that keep them shaded so that they only reach the threshold value when exposed to direct 
+                        light rather than in passive room light.
+                    </p>
+                    <p>I 3d printed a housing for the system that mounts around a computer monitor. It has 5 antenna-like 
+                        targets containing the light dependent resistors far enough away from each other to avoid accidental
+                        inputs which attach by wire to a small box containing the microcontroller. It is also extensible so 
+                        that it fits a range of laptop and monitor screen sizes.
+                    </p>
+                    <p>This project was demoed at the <a href="https://www.falmouth.ac.uk/games-expo" target="_blank">
+                        Falmouth University Game Expo</a> 2024.
+                    </p>
+                </div>
+            </article>
         </main>
 
         <footer>

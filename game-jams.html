@@ -17,10 +17,10 @@
     <body>
         <nav class="topnav">
             <ul>
-                <li><a href="../#top">Reuben Burton</a></li>
-                <li><a href="../#about">About</a></li>
-                <li><a href="../#projects">Projects</a></li>
-                <li><a href="../#contact">Contact</a></li>
+                <li><a class="first" href="../#top"><p>Reuben Burton</p></a></li>
+                <li><a href="../#about"><p>About</p></a></li>
+                <li><a href="../#projects"><p>Projects</p></a></li>
+                <li><a href="../#contact"><p>Contact</p></a></li>
             </ul>
         </nav>
         
@@ -29,41 +29,51 @@
         </header>
 
         <main id="main-content">
-            <article>
+            <article class="project-desc">
                 <header>
                     <h2>Cosmic Clinic</h2>
                 </header>
-                <img src="../assets/projects/cosmic-clinic.png" alt="Showcase Image" width="315px" height="250px">
-                <p>A game I worked on with a small team for the global game jam 2025. Players take on the role 
-                    of an interdimensional plague doctor, who happens to be a fish, and must treat as many patients 
-                    as possible by popping their pus bubbles with the appropriate tools before they succumb to their
-                    disease.
-                </p>
-                <p><a href="https://minutestildawn.itch.io/cosmic-clinic" target="_blank">View on Itch.io</a>
-                </p>
-                <p>For this project, I handled randomly spawning pus bubbles on the surface of patients bodies and 
-                    created the system for certain tools only popping certain bubbles. I also cleaned up the other 
-                    programmers' code so that the parts programmed in C++ and Blueprints worked together as well 
-                    as sorting out the version control throughout so that most changes were successfully integrated 
-                    without overriding core features.
-                </p>
+                <img class="showcase-img" src="../assets/projects/cosmic-clinic.png" alt="Showcase Image" width="315px" height="250px">
+                <div class="images"></div>
+                <div class="summary">
+                    <p>A game I worked on with a small team for the global game jam 2025. Players take on the role 
+                        of an interdimensional plague doctor, who happens to be a fish, and must treat as many patients 
+                        as possible by popping their pus bubbles with the appropriate tools before they succumb to their
+                        disease.
+                    </p>
+                    <p><a href="https://minutestildawn.itch.io/cosmic-clinic" target="_blank">View on Itch.io</a>
+                    </p>
+                </div>
+                <div class="text">
+                    <p>For this project, I handled randomly spawning pus bubbles on the surface of patients bodies and 
+                        created the system for certain tools only popping certain bubbles. I also cleaned up the other 
+                        programmers' code so that the parts programmed in C++ and Blueprints worked together as well 
+                        as sorting out the version control throughout so that most changes were successfully integrated 
+                        without overriding core features.
+                    </p>
+                </div>
             </article>
-            <article>
+            <article class="project-desc">
                 <header>
                     <h2>Fish Finger Factory</h2>
                 </header>
-                <img src="../assets/projects/fish-finger-factory.png" alt="Showcase Image" width="315px" height="250px">
-                <p>A game I worked on solo for the GMTK game jam 2024. A simplistic top-down factory simulation 
-                    game in which the player takes control of an empty fish finger factory and must build it into 
-                    a fish finger empire. 
-                </p>
-                <p><a href="https://petricave.itch.io/fish-finger-factory" target="_blank">View on Itch.io</a>
-                </p>
-                <p>I created a grid based building system which allows for building and destroying 6 types of factory 
-                    pieces tied to buying and selling mechanics. I also created a system for objects (fish) to travel 
-                    along conveyor belts, entering machines and being output as different object types with different 
-                    sell values.
-                </p>
+                <img class="showcase-img" src="../assets/projects/fish-finger-factory.png" alt="Showcase Image" width="315px" height="250px">
+                <div class="images"></div>
+                <div class="summary">
+                    <p>A game I worked on solo for the GMTK game jam 2024. A simplistic top-down factory simulation 
+                        game in which the player takes control of an empty fish finger factory and must build it into 
+                        a fish finger empire. 
+                    </p>
+                    <p><a href="https://petricave.itch.io/fish-finger-factory" target="_blank">View on Itch.io</a>
+                    </p>
+                </div>
+                <div class="text">
+                    <p>I created a grid based building system which allows for building and destroying 6 types of factory 
+                        pieces tied to buying and selling mechanics. I also created a system for objects (fish) to travel 
+                        along conveyor belts, entering machines and being output as different object types with different 
+                        sell values.
+                    </p>
+                </div>
             </article>
         </main>
 

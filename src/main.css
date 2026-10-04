@@ -43,6 +43,12 @@ body:has(#title-header){
                          'footer';
 }
 
+body:has(.project-desc){
+    background-image: url(../assets/dither.png);
+    background-repeat: repeat;
+    background-size: 160px;
+}
+
 p, h1, h2, h3, h4, h5, h6{
     margin: 10px;
 }
@@ -121,6 +127,7 @@ nav.topnav {
     p {
         margin: 0;
         padding: 0;
+        position: relative;
     }
 }
 
@@ -146,10 +153,12 @@ nav.topnav li a {
     text-decoration: none;
 }
 
-nav.topnav li a:hover {
-    background-image: url(../assets/dither.png);
-    background-size: 160px;
-    color: var(--primary-fg-color);
+nav.topnav li:hover {
+    background-color: var(--link-color);
+
+    p {
+        top: -2px;
+    }
 }
 /* #endregion Top Nav Bar */
 
@@ -274,6 +283,47 @@ div.icon > svg {
     height: auto;
 }
 /* #endregion Projects */
+
+/* #region Project Page */
+article.project-desc {
+    display: grid;
+    grid-template-areas: "showcase-img header  header"
+                         "showcase-img summary summary" 
+                         "text         text    img";
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto 1fr auto;
+    margin: 10px;
+    border: var(--line-thickness) solid var(--primary-fg-color);
+    border-radius: 20px;
+    background-color: var(--primary-bg-color);
+
+    header {
+        grid-area: header;
+        height: fit-content;
+    }
+
+    img {
+        margin: 13px;
+    }
+
+    img.showcase-img {
+        grid-area: showcase-img;
+        margin: 13px 0 0 13px;
+    }
+
+    .summary {
+        grid-area: summary;
+    }
+
+    .text {
+        grid-area: text;
+    }
+
+    .images {
+        grid-area: img;
+    }
+}
+/* #endregion Project Page */
 
 footer {
     grid-area: footer;
