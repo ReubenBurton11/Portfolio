@@ -93,6 +93,9 @@ small {
 img {
     font-style: italic;
     font-size: 0.9em;
+    border: 2px solid var(--primary-fg-color);
+    border-radius: 10px;
+    background-color: var(--error-color);
 }
 
 hr {
@@ -230,11 +233,8 @@ div.icon > svg {
     justify-self: center;
     align-self: center;
     margin: 13px;
-    border: 2px solid var(--primary-fg-color);
-    border-radius: 10px;
     width: 315px;
     height: 250px;
-    background-color: var(--error-color);
 }
 
 .project p {
