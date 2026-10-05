@@ -324,10 +324,6 @@ article.project-desc {
         img {
             margin: 0 13px 13px;
         }
-
-        img:first-child {
-            margin: 13px;
-        }
     }
 }
 /* #endregion Project Page */
