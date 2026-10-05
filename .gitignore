@@ -17,6 +17,11 @@ coverage/
 # Build output
 build/Release
 
+# Unnecessary for dist
+.ts
+tsconfig.json
+.vscode/
+
 # TypeScript cache
 *.tsbuildinfo
 
