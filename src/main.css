@@ -302,10 +302,6 @@ article.project-desc {
         height: fit-content;
     }
 
-    img {
-        margin: 13px;
-    }
-
     img.showcase-img {
         grid-area: showcase-img;
         margin: 13px 0 0 13px;
@@ -321,6 +317,17 @@ article.project-desc {
 
     .images {
         grid-area: img;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        
+        img {
+            margin: 0 13px 13px;
+        }
+
+        img:first-child {
+            margin: 13px;
+        }
     }
 }
 /* #endregion Project Page */
