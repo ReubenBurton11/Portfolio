@@ -44,11 +44,12 @@ body:has(#title-header){
 }
 
 body:has(.project-desc){
-    background-image: url(../assets/dither.png);
+    background-image: url(../../assets/images/dither.png);
     background-repeat: repeat;
     background-size: 160px;
 }
 
+/* #region Base Elements */
 p, h1, h2, h3, h4, h5, h6{
     margin: 10px;
 }
@@ -111,6 +112,7 @@ hr {
     border-style: none;
     margin: 0;
 }
+/* #endregion Base Elements */
 
 header {
     grid-area: header;
@@ -173,25 +175,34 @@ main {
     justify-content: space-evenly;
     align-items: center;
     overflow-x:scroll;
-}
 
-div.icon > svg {
-    --num-icons-on-screen: 5;
-    margin: max(0px, calc((100vw - (var(--num-icons-on-screen) * 120px)) / (2 * var(--num-icons-on-screen))));
-    padding: 0;
-    width: 120px;
-    height: auto;
-}
-
-@media (max-width: 1400px){
-    div.icon > svg {
-        --num-icons-on-screen: 4;
+    div.icon {
+        justify-content: center;
+        align-content: center;
     }
-}
 
-@media (max-width: 1120px){
     div.icon > svg {
-        --num-icons-on-screen: 3;
+        --num-icons-on-screen: 5;
+        margin: max(0px, calc((100vw - (var(--num-icons-on-screen) * 120px)) / (2 * var(--num-icons-on-screen))));
+        padding: 0;
+        width: 120px;
+        height: auto;
+    }
+
+    @media (max-width: 1400px){
+        div.icon > svg {
+            --num-icons-on-screen: 4;
+        }
+    }
+
+    @media (max-width: 1120px){
+        div.icon {
+            min-height: 250px;
+        }
+
+        div.icon > svg {
+            --num-icons-on-screen: 3;
+        }
     }
 }
 /* #endregion Toolbox */
@@ -212,21 +223,21 @@ div.icon > svg {
     display: grid;
     grid-template-areas: "img header tools"
                          "img text   tools";
-    grid-template-columns: auto 1fr 160px;
+    grid-template-columns: auto 1fr auto;
     grid-template-rows:  auto 1fr;
     margin: 20px;
-    padding: 0;
+    padding: 13px;
     border-radius: 20px;
     border: var(--line-thickness) solid var(--primary-fg-color);
     background-color: var(--primary-bg-color);
     color: var(--primary-fg-color);
-    max-height: 280px;
+    max-height: 254px;
 }
 
 .project .container:hover {
     --x-offset: 10px;
     --y-offset: -5px;
-    background-image: url(../assets/dither.png);
+    background-image: url(../../assets/images/dither.png);
     background-size: 160px;
     background-repeat: repeat;
     outline-style: solid;
@@ -251,13 +262,16 @@ div.icon > svg {
     grid-area: img;
     justify-self: center;
     align-self: center;
-    margin: 13px;
-    width: 315px;
-    height: 250px;
+    margin: 0 13px 0 0;
 }
 
 .project p {
     grid-area: text;
+    margin: 0 13px 0 0;
+}
+
+.project h3, h4{
+    margin: 0 0 8px;
 }
 
 .project .project-tool-list {
@@ -265,7 +279,8 @@ div.icon > svg {
     align-self: start;
     justify-self: center;
     width: 100%;
-    height: 280px;
+    height: 100%;
+    max-height: 280px;
     text-align: center;
 }
 
@@ -273,14 +288,50 @@ div.icon > svg {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    justify-self: center;
     justify-content: flex-start;
     align-content: center;
-    height: 220px;
+    height: calc(100% - 30px);
+    min-width: 100px;
+    margin: 0;
+}
+
+.project .tool-icon-list .tool-icon {
+    margin: 1px;
 }
 
 .project .tool-icon-list .tool-icon > svg {
     width: 50px;
     height: auto;
+}
+
+/* For small devices */
+@media (max-width: 730px) {
+    .project {
+        .container {
+            grid-template-areas: "header header"
+                                "img    tools"
+                                "text   text";
+            grid-template-columns: auto 1fr;
+            grid-template-rows:  auto auto auto;
+            max-height: none;
+        }
+
+        img {
+            max-width: calc(100% - 13px);
+            width: 315px;
+            height: auto;
+            margin: 0 13px 0 0;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        h3 {
+            margin: 0;
+        }
+    }
 }
 /* #endregion Projects */
 
@@ -323,6 +374,38 @@ article.project-desc {
         
         img {
             margin: 0 13px 13px;
+        }
+    }
+}
+
+@media (max-width: 785px)
+{
+    article.project-desc {
+        grid-template-areas: "header header"
+                             "showcase-img showcase-img" 
+                             "summary         summary"
+                             "text text"
+                             "img img";
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto auto auto auto;
+
+        p, h1, h2 {
+            margin: 13px 20px 13px;
+        }
+
+        img {
+            width: 80%;
+            height: auto;
+        }
+
+        img.showcase-img {
+            align-self: center;
+            justify-self: center;
+            margin: 0;
+        }
+
+        .images {
+            align-content: center;
         }
     }
 }
