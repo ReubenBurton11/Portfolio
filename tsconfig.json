@@ -4,10 +4,10 @@
     "module":"esnext",
     "removeComments": true,
     "sourceMap": false,
-    "rootDir": "src",
-    "outDir": "src/dist"
+    "rootDir": "./src",
+    "outDir": "./dist"
   },
 
-  "include": ["src/**/*"],
-  "exclude": ["src/dist"]
+  "include": ["./src/**/*"],
+  "exclude": ["./dist"]
 }

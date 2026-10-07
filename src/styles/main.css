@@ -44,7 +44,7 @@ body:has(#title-header){
 }
 
 body:has(.project-desc){
-    background-image: url(../assets/dither.png);
+    background-image: url(../../assets/images/dither.png);
     background-repeat: repeat;
     background-size: 160px;
 }
@@ -226,7 +226,7 @@ div.icon > svg {
 .project .container:hover {
     --x-offset: 10px;
     --y-offset: -5px;
-    background-image: url(../assets/dither.png);
+    background-image: url(../../assets/images/dither.png);
     background-size: 160px;
     background-repeat: repeat;
     outline-style: solid;
