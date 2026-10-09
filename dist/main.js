@@ -1,4 +1,48 @@
 "use strict";
+function GetRootUrl() {
+    const protocol = window.location.protocol;
+    const hostname = window.location.hostname;
+    const port = window.location.port;
+    let root = `${protocol}//${hostname}`;
+    if (port) {
+        const defaultPorts = new Map([['http', '80'], ['https', '443'], ['ftp', '21']]);
+        if (port !== defaultPorts.get(protocol)) {
+            root += `:${port}`;
+        }
+    }
+    return root;
+}
+const navlinks = document.querySelectorAll('nav a');
+for (let i = 0; i < navlinks.length; i++) {
+    navlinks[i].addEventListener('click', (event) => {
+        const href = navlinks[i].getAttribute('href');
+        if (href.at(0) != '#')
+            return;
+        const target = document.querySelector(href);
+        if (!target) {
+            if (document.baseURI != document.documentURI) {
+                if (href == '#top') {
+                    window.open(GetRootUrl(), '_self');
+                }
+                return;
+            }
+            ;
+            if (href == '#top') {
+                event.preventDefault();
+                window.scrollTo({
+                    behavior: "smooth",
+                    top: 0
+                });
+            }
+        }
+        else {
+            event.preventDefault();
+            target.scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+    });
+}
 const iconList = document.querySelector('.icon-list');
 iconList?.addEventListener('wheel', (event) => {
     let e = event;
