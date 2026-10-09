@@ -1,3 +1,57 @@
+//Gets the website's root url
+function GetRootUrl(){
+    const protocol = window.location.protocol;
+    const hostname = window.location.hostname;
+    const port = window.location.port;
+
+    let root = `${protocol}//${hostname}`;
+
+    if (port){
+        const defaultPorts = new Map([['http','80'], ['https','443'], ['ftp','21']]);
+        if (port !== defaultPorts.get(protocol)){
+            root += `:${port}`;
+        }
+    }
+
+    return root;
+}
+
+const navlinks: NodeListOf<HTMLElement> = document.querySelectorAll('nav a');
+for (let i = 0; i < navlinks.length; i++){
+    navlinks[i].addEventListener('click', (event) =>
+    {
+        const href: string = navlinks[i].getAttribute('href') as string;
+
+        if (href.at(0) != '#') return;
+        
+        const target = document.querySelector(href);
+        
+        if (!target){
+            if (document.baseURI != document.documentURI){
+                if (href == '#top'){
+                    window.open(GetRootUrl(), '_self');
+                }
+                return;
+            };
+            if (href == '#top'){
+                event.preventDefault();
+
+                window.scrollTo({
+                    behavior: "smooth",
+                    top: 0
+                });
+            }
+        }   
+        else {
+            event.preventDefault();
+            
+            target.scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+    });
+}
+
 //Makes icon list horizontally scrollable
 const iconList = document.querySelector('.icon-list');
 iconList?.addEventListener('wheel', (event) => {
@@ -90,7 +144,6 @@ for (let i = 0; i < icons.length; i++){
         LinearRotateAnim(target, false, 1440, 0, iconTimerIdPrefix + i);
     });
 }
-
 
 //TODO: Put LinearRotateAnim in an external module
 let rotateTimerIds: Map<string, number> = new Map;

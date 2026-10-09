@@ -20,6 +20,10 @@
     color: grey;
 }
 
+* {
+    scroll-margin-top: 60px;
+}
+
 body {
     margin: 0;
     padding: 0;
