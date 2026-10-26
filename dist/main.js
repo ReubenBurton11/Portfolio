@@ -46,7 +46,7 @@ for (let i = 0; i < navlinks.length; i++) {
 const iconList = document.querySelector('.icon-list');
 iconList?.addEventListener('wheel', (event) => {
     let e = event;
-    if (!(iconList.scrollLeft <= 0 && e.deltaY < 0) && !(iconList.scrollLeft >= iconList.scrollWidth - iconList.clientWidth && e.deltaY > 0)) {
+    if (!(iconList.scrollLeft <= 0 && e.deltaY < 0) && !(iconList.scrollLeft + 1 >= iconList.scrollWidth - iconList.clientWidth && e.deltaY > 0)) {
         e.preventDefault();
         LinearScrollAnim(e.deltaY);
     }
